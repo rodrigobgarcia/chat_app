@@ -7,8 +7,9 @@ import SettingsPage from "./pages/SettingsPage";
 import ProfilePage from "./pages/ProfilePage";
 import { useAuthStore } from "./store/useAuthStore.js";
 import { useEffect } from "react";
-import {Loader} from "lucide-react";
+import { Loader} from "lucide-react";
 import { Navigate } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
 
 const App = () => {
   const {authUser, checkAuth, isCheckingAuth} = useAuthStore();
@@ -43,6 +44,10 @@ const App = () => {
 
       </Routes>
       
+      <Toaster
+        position="top-center"
+        reverseOrder={false}
+      />
     </div>
     
   );
